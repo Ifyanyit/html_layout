@@ -1,0 +1,83 @@
+/* Universal selector*/
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box; /* you consider border and padding left and right as part of the width*/
+}
+
+
+/* Note that the width of any tag is the sum of padding, width and border
+whenever we add padding left and right or border left and right, we have to change the width value
+Total width of the div is (width=96)+(padding-left=2)+(padding-right=2) = 100%
+But if use 'Box-sizing, we need not bother subtracting or adding */
+#logo-div {
+    width: 100%;
+    background-color: aquamarine;
+    min-height: 50px;
+    padding-left: 2%;
+    line-height: 50px;
+    margin-bottom: 10px;
+}
+
+#nav-div {
+    width: 100%;
+    background-color: lightgray;
+    min-height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+#header-banner-div {
+    width: 100%;
+    background-color: lightgray;
+    min-height: 100px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 100px;
+}
+
+#parent-div {
+    width: 100%;
+    /* background-color: goldenrod; */
+    margin-top: 10px;
+    /* min-height: 400px;*/
+}
+
+#parent-side-bar-div {
+    background-color: lightgray;
+    width: 25%;
+    min-height: 400px;
+    text-align: center;
+    line-height: 400px;
+    float: left;
+}
+
+#parent-body-area-div {
+    background-color: yellowgreen;
+    width: 70%;
+    text-align: center;
+    min-height: 400px;
+    line-height: 400px;
+    float: right;
+}
+
+#footer-div {
+    background-color: lightgray;
+    margin-top: 10px;
+    text-align: center;
+    min-height: 60px;
+    line-height: 60px;
+}
+
+/* clear fix is used to return the height. ': ::after ' means us this styles after the content od the div */
+.clearFix::after {
+    content: "";
+    display: block;
+    clear: both; /* We don't want the properties on  sidebar and body area to have effect on parent div*/
+}
+
+#wrapper-div {
+    /* background-color: blueviolet; */
+    width: 80%;
+    margin: auto;
